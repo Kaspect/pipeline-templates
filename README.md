@@ -19,12 +19,21 @@ and have the string print to latex as normal text within a sentence.
 # Technical Task assignments (below)
 
 ###Shuming
-- Design a 3D plot using rgl snapshot http://stackoverflow.com/questions/27958226/adding-a-legend-to-an-rgl-3d-plot  
+####Data
+https://data.cityofnewyork.us/Education/SAT-Results/f9bf-2cp4
+####Visualization
+- Design a 3D plot using rgl snapshot http://stackoverflow.com/questions/27958226/adding-a-legend-to-an-rgl-3d-plot 
 
 ###Nick
-- Design 2 boxplots, 1 with `base R` and one with `ggplot2`.  
+####Data
+https://controllerdata.lacity.org/Budget/City-Expenditures-by-Month/3ctd-sjrm
+https://controllerdata.lacity.org/api/views/3ctd-sjrm/rows.csv?accessType=DOWNLOAD
+####Visualization
+- Design 2 boxplots, 1 with `base R` and one with `ggplot2`.  Find an interesting way to split up the data into groups, so you can make a comparison between the $ awared to different types of expenditures
 
 ###Max
+####Data
+
 - TBD
 
 
