@@ -1,12 +1,10 @@
-# pipeline-templates
-
-
+# Pipeline-Templates
 
 #Deliverable 1, for Li, Reminder, Schwarzer
 0. Read the following carefully: http://kbroman.org/knitr_knutshell/pages/latex.html
-1. Clone this repo, make a folder with your last name
+1. Clone this repo, make a folder with your last name & commit it to master.
 2. Make a new branch called your last name __i.e.__`cohn`
-2. within the repo, make an R-latex file like the one here https://github.com/yihui/knitr-examples/blob/master/005-latex.Rtex
+2. Within the repo, make an R-latex file like the one here https://github.com/yihui/knitr-examples/blob/master/005-latex.Rtex
 3. Make frequent, useful commits as you develop https://try.github.io/levels/1/challenges/1
 3. Make an in-line numerical statistic. `Of the 8492 elements in the data, the mean was 7.3 and the standard deviation was 3.3`.
 4. Make an in-line string.
@@ -16,15 +14,16 @@
 x <- "Claremont"
 ```
 and have the string print to latex as normal text within a sentence.
+
 # Technical Task assignments (below)
 
-###Shuming
+##Shuming
 ####Data
 https://data.cityofnewyork.us/Education/SAT-Results/f9bf-2cp4
 ####Visualization
 - Design a 3D plot using rgl snapshot http://stackoverflow.com/questions/27958226/adding-a-legend-to-an-rgl-3d-plot 
 
-###Nick
+##Nick
 ####Data
 https://controllerdata.lacity.org/Budget/City-Expenditures-by-Month/3ctd-sjrm
 https://controllerdata.lacity.org/api/views/3ctd-sjrm/rows.csv?accessType=DOWNLOAD
@@ -33,8 +32,11 @@ https://controllerdata.lacity.org/api/views/3ctd-sjrm/rows.csv?accessType=DOWNLO
 
 ###Max
 ####Data
-
-- TBD
+https://controllerdata.lacity.org/Budget/City-Expenditures-by-Month/3ctd-sjrm
+https://controllerdata.lacity.org/api/views/3ctd-sjrm/rows.csv?accessType=DOWNLOAD
+####Visualization
+- Design a hierarchical clustering approach to this dataset to look at the types of departments that are most similar
+- https://stat.ethz.ch/R-manual/R-devel/library/stats/html/hclust.html
 
 
 
