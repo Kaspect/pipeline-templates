@@ -12,14 +12,12 @@ Boring stuff as usual:
 
 %% a chunk with default options
 %% begin.rcode
-% 1+1
-%
-% x=rnorm(5)
+% database <- read.csv("https://controllerdata.lacity.org/api/views/3ctd-sjrm/rows.csv?accessType=DOWNLOAD")
+% database$EXPENDITURES <- as.numeric(gsub("\\$", "", as.character(database$EXPENDITURES)))
 %% end.rcode
 
-For the cached chunk below, you will need to wait for 10 seconds for
-the first time you compile this document, but it takes no time the
-next time you run it again.
+The LA City Controller data under analysis includes \rinline{nrow(database} distinct payments, whose mean size is \rinline{mean(database&EXPENDITURES)},
+with a median size of \rinline{median(database&EXPENDITURES)}
 
 %% chunk options: cache this chunk
 %% begin.rcode my-cache, cache=TRUE
