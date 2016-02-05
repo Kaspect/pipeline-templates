@@ -4,11 +4,10 @@
 \newcommand{\rinline}[1]{SOMETHING WRONG WITH knitr}
 %% begin.rcode setup, include=FALSE
 % library(knitr)
+% warning = FALSE
 % opts_chunk$set(fig.path='figure/latex-', cache.path='cache/latex-')
 %% end.rcode
 \begin{document}
-
-Boring stuff as usual:
 
 %% a chunk with default options
 %% begin.rcode echo=FALSE
@@ -20,34 +19,11 @@ Boring stuff as usual:
 The LA City Controller data under analysis includes \rinline{nrow(database)} distinct payments, whose mean size is \rinline{mean(database$EXPENDITURES)},
 with a median size of \rinline{median(database$EXPENDITURES)}.  The standard deviation is $\rinline{sd(database$EXPENDITURES)}. 
 
-%% chunk options: cache this chunk
-%% begin.rcode my-cache, cache=TRUE
-% set.seed(123)
-% x = runif(10)
-% sd(x)  # standard deviation
-%
-% Sys.sleep(10) # test cache
+
+%% a chunk with default options
+%% begin.rcode echo=FALSE
+% hc <- hclust((dist(departmentExpenditure))^(1/3), "ave")
+% labels <- t(departmentExpenditure[1])
+% plot(hc,  labels, hang = 3, main = "Departments by Net Expenditure")
 %% end.rcode
-
-Now we know the first element of x is \rinline{x[1]}. And we also know
-the 26 letters are \rinline{LETTERS}. An expression that returns a
-value of length 0 will be removed from the output, \rinline{x[1] =
-  2011; NULL} but it was indeed evaluated, e.g. now the first element
-of x becomes \rinline{x[1]}.
-
-How about figures? Let's use the Cairo PDF device (assumes R $\geq$
-2.14.0).
-
-%% begin.rcode cairo-scatter, dev='cairo_pdf', fig.width=5, fig.height=5, out.width='.8\\textwidth'
-% plot(cars) # a scatter plot
-%% end.rcode
-
-Warnings, messages and errors are preserved by default.
-
-%% begin.rcode
-% sqrt(-1) # here is a warning!
-% message('this is a message you should know')
-% 1+'a'  # impossible
-%% end.rcode
-
 \end{document}
