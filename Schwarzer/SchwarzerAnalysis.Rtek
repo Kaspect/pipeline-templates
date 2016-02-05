@@ -4,8 +4,7 @@
 \newcommand{\rinline}[1]{SOMETHING WRONG WITH knitr}
 %% begin.rcode setup, include=FALSE
 % library(knitr)
-% opts_chunk$set(fig.align='center') 
-% opts_chunk$set(fig.path='figure/latex-', cache.path='cache/latex-')
+% opts_chunk$set(dev = 'pdf', fig.path='figure/latex-', cache.path='cache/latex-', fig.align='left')
 %% end.rcode
 \begin{document}
 
@@ -22,7 +21,7 @@ The \rinline{x} City Controller data under analysis includes \rinline{nrow(datab
 with a median size of \$\rinline{median(database$EXPENDITURES)}.  The standard deviation is \$\rinline{sd(database$EXPENDITURES)}. 
 
 %% a chunk with default options
-%% begin.rcode warning=FALSE, echo =FALSE, fig.width=6, fig.height=6,
+%% begin.rcode warning=FALSE, echo =FALSE, fig.width=8, fig.height=8
 % hc <- hclust((dist(departmentExpenditure))^(1/2), "ave")
 % labels <- t(departmentExpenditure[1])
 % labels <- substring(labels, 0, 10)
