@@ -66,7 +66,7 @@ with a median size of \$28097.47.  The standard deviation is \$16078356.8367006.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-\includegraphics[width=800,height=800]{figure/latex-unnamed-chunk-2-1} \hfill{}
+\includegraphics[width=\maxwidth]{figure/latex-unnamed-chunk-2-1} \hfill{}
 
 
 
