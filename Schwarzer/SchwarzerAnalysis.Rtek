@@ -12,12 +12,16 @@ Boring stuff as usual:
 
 %% a chunk with default options
 %% begin.rcode
-% database <- read.csv("https://controllerdata.lacity.org/api/views/3ctd-sjrm/rows.csv?accessType=DOWNLOAD")
-% database$EXPENDITURES <- as.numeric(gsub("\\$", "", as.character(database$EXPENDITURES)))
+% database <- read.csv("https://controllerdata.lacity.org/api
+% /views/3ctd-sjrm/rows.csv?accessType=DOWNLOAD")
+% database$EXPENDITURES <- as.numeric
+% (gsub("\\$", "", as.character(database$EXPENDITURES)))
+% departmentExpenditure <- 
+% aggregate(database$EXPENDITURE, by=list(Category=database$DEPARTMENT.NAME), FUN=sum)
 %% end.rcode
 
-The LA City Controller data under analysis includes \rinline{nrow(database} distinct payments, whose mean size is \rinline{mean(database&EXPENDITURES)},
-with a median size of \rinline{median(database&EXPENDITURES)}
+The LA City Controller data under analysis includes \rinline{nrow(database)} distinct payments, whose mean size is \rinline{mean(database$EXPENDITURES)},
+with a median size of \rinline{median(database$EXPENDITURES)}.  The standard deviation is $\rinline{sd(database$EXPENDITURES)}. 
 
 %% chunk options: cache this chunk
 %% begin.rcode my-cache, cache=TRUE
