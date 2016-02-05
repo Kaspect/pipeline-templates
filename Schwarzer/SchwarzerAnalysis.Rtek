@@ -6,6 +6,7 @@
 % library(knitr)
 % warning = FALSE
 % opts_chunk$set(fig.path='figure/latex-', cache.path='cache/latex-')
+% x <- Los Angeles
 %% end.rcode
 \begin{document}
 
@@ -16,7 +17,7 @@
 % departmentExpenditure <- aggregate(database$EXPENDITURE, by=list(Category=database$DEPARTMENT.NAME), FUN=sum)
 %% end.rcode
 
-The LA City Controller data under analysis includes \rinline{nrow(database)} distinct payments, whose mean size is \rinline{mean(database$EXPENDITURES)},
+The \rinline{x} City Controller data under analysis includes \rinline{nrow(database)} distinct payments, whose mean size is \rinline{mean(database$EXPENDITURES)},
 with a median size of \rinline{median(database$EXPENDITURES)}.  The standard deviation is $\rinline{sd(database$EXPENDITURES)}. 
 
 
