@@ -4,27 +4,28 @@
 \newcommand{\rinline}[1]{SOMETHING WRONG WITH knitr}
 %% begin.rcode setup, include=FALSE
 % library(knitr)
-% warning = FALSE
+% opts_chunk$set(fig.align='center') 
 % opts_chunk$set(fig.path='figure/latex-', cache.path='cache/latex-')
-% x <- Los Angeles
 %% end.rcode
 \begin{document}
 
 %% a chunk with default options
 %% begin.rcode echo=FALSE
+% x <- "Los Angeles"
+% options(scipen = 999)
 % database <- read.csv("https://controllerdata.lacity.org/api/views/3ctd-sjrm/rows.csv?accessType=DOWNLOAD")
 % database$EXPENDITURES <- as.numeric(gsub("\\$", "", as.character(database$EXPENDITURES)))
 % departmentExpenditure <- aggregate(database$EXPENDITURE, by=list(Category=database$DEPARTMENT.NAME), FUN=sum)
 %% end.rcode
 
-The \rinline{x} City Controller data under analysis includes \rinline{nrow(database)} distinct payments, whose mean size is \rinline{mean(database$EXPENDITURES)},
-with a median size of \rinline{median(database$EXPENDITURES)}.  The standard deviation is $\rinline{sd(database$EXPENDITURES)}. 
-
+The \rinline{x} City Controller data under analysis includes \rinline{nrow(database)} distinct payments, whose mean size is \$\rinline{mean(database$EXPENDITURES)},
+with a median size of \$\rinline{median(database$EXPENDITURES)}.  The standard deviation is \$\rinline{sd(database$EXPENDITURES)}. 
 
 %% a chunk with default options
-%% begin.rcode echo=FALSE
-% hc <- hclust((dist(departmentExpenditure))^(1/3), "ave")
+%% begin.rcode warning=FALSE, echo =FALSE, fig.width=6, fig.height=6,
+% hc <- hclust((dist(departmentExpenditure))^(1/2), "ave")
 % labels <- t(departmentExpenditure[1])
-% plot(hc,  labels, hang = 3, main = "Departments by Net Expenditure")
+% labels <- substring(labels, 0, 10)
+% plot(hc,  labels, hang = -1, main = "Departments by Net Expenditure")
 %% end.rcode
 \end{document}

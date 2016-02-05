@@ -56,22 +56,21 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
-Boring stuff as usual:
-
 %% a chunk with default options
 
 
-The LA City Controller data under analysis includes 82328 distinct payments, whose mean size is \ensuremath{1.4448947\times 10^{6}},
-with a median size of \ensuremath{2.809747\times 10^{4}}.  The standard deviation is $\ensuremath{1.6078357\times 10^{7}}. 
-
+The Los Angeles City Controller data under analysis includes 82328 distinct payments, whose mean size is \$1444894.6596439,
+with a median size of \$28097.47.  The standard deviation is \$16078356.8367006. 
 
 %% a chunk with default options
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\maxwidth]{figure/latex-unnamed-chunk-2-1} 
+
+}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in dist(departmentExpenditure): NAs introduced by coercion}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/latex-unnamed-chunk-2-1} 
 
 \end{knitrout}
 \end{document}
