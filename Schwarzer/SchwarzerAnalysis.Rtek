@@ -5,6 +5,7 @@
 %% begin.rcode setup, include=FALSE
 % library(knitr)
 % opts_chunk$set(dev = 'pdf', fig.path='figure/latex-', cache.path='cache/latex-', fig.align='left')
+% my_pdf = function(file, width = 8, height = 8) { pdf(file, width = width, height = height, pointsize = 10)}
 %% end.rcode
 \begin{document}
 
@@ -21,10 +22,10 @@ The \rinline{x} City Controller data under analysis includes \rinline{nrow(datab
 with a median size of \$\rinline{median(database$EXPENDITURES)}.  The standard deviation is \$\rinline{sd(database$EXPENDITURES)}. 
 
 %% a chunk with default options
-%% begin.rcode warning=FALSE, echo =FALSE, fig.width=8, fig.height=8
-% hc <- hclust((dist(departmentExpenditure))^(1/2), "ave")
+%% begin.rcode warning=FALSE, echo =FALSE, dev='pdf'
+% cluster <- hclust((dist(departmentExpenditure[2]))^(1/2), "ave")
 % labels <- t(departmentExpenditure[1])
 % labels <- substring(labels, 0, 10)
-% plot(hc,  labels, hang = -1, main = "Departments by Net Expenditure")
+% plot(cluster,  labels, hang = -1, main = "Departments by Net Expenditure")
 %% end.rcode
 \end{document}
