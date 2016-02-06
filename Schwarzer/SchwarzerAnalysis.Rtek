@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{graphicx}
+%% for inline R code: if the inline code is not correctly parsed, you will see a message
+\newcommand{\rinline}[1]{SOMETHING WRONG WITH knitr}
+%% begin.rcode setup, include=FALSE
+% library(knitr)
+% opts_chunk$set(dev = 'pdf', fig.path='figure/latex-', cache.path='cache/latex-', fig.align='left')
+% my_pdf = function(file, width = 8, height = 8) { pdf(file, width = width, height = height, pointsize = 8)}
+%% end.rcode
+\begin{document}
+
+%% a chunk with default options
+%% begin.rcode echo=FALSE
+% x <- "Los Angeles"
+% options(scipen = 999)
+% database <- read.csv("https://controllerdata.lacity.org/api/views/3ctd-sjrm/rows.csv?accessType=DOWNLOAD")
+% database$EXPENDITURES <- as.numeric(gsub("\\$", "", as.character(database$EXPENDITURES)))
+% departmentExpenditure <- aggregate(database$EXPENDITURE, by=list(Category=database$DEPARTMENT.NAME), FUN=sum)
+%% end.rcode
+
+The \rinline{x} City Controller data under analysis includes \rinline{nrow(database)} distinct payments, whose mean size is \$\rinline{mean(database$EXPENDITURES)},
+with a median size of \$\rinline{median(database$EXPENDITURES)}.  The standard deviation is \$\rinline{sd(database$EXPENDITURES)}. 
+
+%% a chunk with default options
+%% begin.rcode warning=FALSE, echo =FALSE, dev='my_pdf', fig.ext='pdf', fig.width = 8, fig.height = 8
+% cluster <- hclust((dist(departmentExpenditure[2]))^(1/2), "ave")
+% labels <- t(departmentExpenditure[1])
+% labels <- substring(labels, 0, 10)
+% plot(cluster,  labels, hang = -1, main = "Departments by Net Expenditure")
+%% end.rcode
+\end{document}
