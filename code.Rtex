@@ -46,7 +46,7 @@ How about figures? Let's use the Cairo PDF device (assumes R $\geq$
 
 %% begin.rcode warning=FALSE, echo=FALSE, dev='my_pdf', fig.ext='pdf', fig.width = 8, fig.height = 8
 % boxplot(departmentExpenditure~DEPARTMENT, data=database, main="Cumulative Expenditures by Department", xlab="Department", ylab="Expenditures")
-% qplot(DEPARTMENT, departmentExpenditure, data=database, )
+% qplot(DEPARTMENT, departmentExpenditure, data=database, alpha=0.5, geom=boxplot, main="Cumulative Expenditures by Department", xlab="Department", ylab="Expenditures")
 %% end.rcode
 
 \end{document}
