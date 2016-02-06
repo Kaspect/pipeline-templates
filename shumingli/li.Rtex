@@ -24,8 +24,7 @@
 % z=as.numeric(as.character(z))
 %% end.rcode
 
-The \rinline{averageScore} data under analysis includes\rinline{nrow(database)} distinct payments plus \rinline{length(na_index)} missing data, which highest writing score is \rinline{max(x)} at \rinline{database[which(x==max(x)),2]},
-,highest math ave score is \rinline{max(y)} at \rinline{database[which(x==max(y)),2]}, and highest writting score is \rinline{max(z)} at \rinline{database[which(x==max(z)),2]}. 
+The \rinline{averageScore} data under analysis includes \rinline{nrow(database)} distinct payments plus \rinline{length(na_index)} missing data, which highest writing score is \rinline{max(x)} at \rinline{database[which(x==max(x)),2]},, highest math ave score is \rinline{max(y)} at \rinline{database[which(x==max(y)),2]}, and highest writting score is \rinline{max(z)} at \rinline{database[which(x==max(z)),2]}. 
 
 
 %% a chunk with default options
