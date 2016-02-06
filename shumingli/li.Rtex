@@ -1,5 +1,4 @@
 \documentclass{article}
-\usepackage{rgl}
 %% for inline R code: if the inline code is not correctly parsed, you will see a message
 \newcommand{\rinline}[1]{SOMETHING WRONG WITH knitr}
 %% begin.rcode setup, include=FALSE
