@@ -26,24 +26,6 @@
 The data under review is comprised of itemized expenditures by month for various department-specific accounts of \rinline{x}. It features \rinline{npayments} individual payments dating to \rinline{earliestpaymentyear}. The mean payment was \rinline{avgpayment}. 
 
 
-%% chunk options: cache this chunk
-%% begin.rcode my-cache, cache=TRUE
-% set.seed(123)
-% x = runif(10)
-% sd(x)  # standard deviation
-%
-% Sys.sleep(10) # test cache
-%% end.rcode
-
-Now we know the first element of x is \rinline{x[1]}. And we also know
-the 26 letters are \rinline{LETTERS}. An expression that returns a
-value of length 0 will be removed from the output, \rinline{x[1] =
-  2011; NULL} but it was indeed evaluated, e.g. now the first element
-of x becomes \rinline{x[1]}.
-
-How about figures? Let's use the Cairo PDF device (assumes R $\geq$
-2.14.0).
-
 %% begin.rcode warning=FALSE, echo=FALSE, dev='my_pdf', fig.ext='pdf', fig.width = 8, fig.height = 8
 % boxplot(departmentExpenditure~DEPARTMENT, data=database, main="Cumulative Expenditures by Department", xlab="Department", ylab="Expenditures")
 % qplot(DEPARTMENT, departmentExpenditure, data=database, alpha=0.5, geom=boxplot, main="Cumulative Expenditures by Department", xlab="Department", ylab="Expenditures")
