@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage{rgl}
+%% for inline R code: if the inline code is not correctly parsed, you will see a message
+\newcommand{\rinline}[1]{SOMETHING WRONG WITH knitr}
+%% begin.rcode setup, include=FALSE
+% library(knitr)
+% opts_chunk$set(dev = 'pdf', fig.path='figure/latex-', cache.path='cache/latex-', fig.align='left')
+% my_pdf = function(file, width = 8, height = 8) { pdf(file, width = width, height = height, pointsize = 8)}
+%% end.rcode
+\begin{document}
+
+
+%% a chunk with default options
+%% begin.rcode echo=FALSE
+% x <- "Average SAT Score"
+% options(scipen = 999)
+% database <- read.csv("https://data.cityofnewyork.us/api/views/f9bf-2cp4/rows.csv?accessType=DOWNLOAD")
+% na_index = which(database[,4]=="s")
+% database = database[-na_index,]
+% x=database[,4]
+% y=database[,5]
+% z=database[,6]
+% x=as.numeric(as.character(x))
+% y=as.numeric(as.character(y))
+% z=as.numeric(as.character(z))
+%% end.rcode
+
+The \rinline{x} data under analysis includes\rinline{nrow(database)} distinct payments plus \rinline{length(na_index)} missing data, which highest writing score is \$\rinline{max(x)} at \$\rinline{database[which(x==max(x)),2]},
+,highest math ave score is \$\rinline{max(y)} at \$\rinline{database[which(x==max(y)),2]}, and highest writting score is \$\rinline{max(z)} at \$\rinline{database[which(x==max(z)),2]}. 
+
+
+%% a chunk with default options
+%% begin.rcode warning=FALSE, echo =FALSE, dev='my_pdf', fig.ext='pdf', fig.width = 8, fig.height = 8
+
+%cuts = cut(x = 1:3*length(sample_kas2[,5]), breaks = 3)
+% plot3d(x,y,z,
+       xlab="Reading Ave", ylab="Math Ave",zlab="Writing lab",
+       col=rainbow(3)[cuts],
+       size = 2, type='s')
+% legend3d("topright", legend = paste(c("Reading","Math","Writting")), pch = 16, 
+         col = rainbow(3), cex=1, inset=c(0.02))
+% 
+%% end.rcode
+\end{document}
+
