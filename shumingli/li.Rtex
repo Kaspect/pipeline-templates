@@ -4,7 +4,15 @@
 %% begin.rcode setup, include=FALSE
 % library(knitr)
 % library(rgl)
-% knit_hooks$set(webgl = hook_webgl)
+% knit_hooks$set(rgl = function(before, options, envir) {
+%  if (!before) {
+%    ## after a chunk has been evaluated
+%    if (rgl.cur() == 0) return()  # no active device
+%    name = paste(options$fig.path, options$label, sep = '')
+%    rgl.snapshot(paste(name, '.png', sep = ''), fmt = 'png')
+%    return(paste('\\includegraphics{', name, '}\n', sep = ''))
+%  }
+%})
 % opts_chunk$set(dev = 'pdf', fig.path='figure/latex-', cache.path='cache/latex-', fig.align='left')
 %% end.rcode
 \begin{document}
