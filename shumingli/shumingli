@@ -14,7 +14,7 @@
 % x <- "Average SAT Score"
 % options(scipen = 999)
 % database <- read.csv("https://data.cityofnewyork.us/api/views/f9bf-2cp4/rows.csv?accessType=DOWNLOAD")
-% na_index = which(database[,4]=="s)
+% na_index = which(database[,4]=="s")
 % database = database[-na_index,]
 % x=database[,4]
 % y=database[,5]
@@ -24,8 +24,8 @@
 % z=as.numeric(as.character(z))
 %% end.rcode
 
-The \rinline{x} data under analysis includes\rinline{nrow(database)} distinct payments plus \rinline{length(na_index)} missing data, which highest writing score is \$\rinline{max(x)} at \$\rinline{database[which(x==max(x),2]},
-,highest math ave score is \$\rinline{max(y)} at \$\rinline{database[which(x==max(y),2]}, and highest writting score is \$\rinline{max(z)} at \$\rinline{database[which(x==max(z),2]}. 
+The \rinline{x} data under analysis includes\rinline{nrow(database)} distinct payments plus \rinline{length(na_index)} missing data, which highest writing score is \$\rinline{max(x)} at \$\rinline{database[which(x==max(x)),2]},
+,highest math ave score is \$\rinline{max(y)} at \$\rinline{database[which(x==max(y)),2]}, and highest writting score is \$\rinline{max(z)} at \$\rinline{database[which(x==max(z)),2]}. 
 
 
 %% a chunk with default options
