@@ -4,7 +4,7 @@
 \newcommand{\rinline}[1]{SOMETHING WRONG WITH knitr}
 %% begin.rcode setup, include=FALSE
 % library(knitr)
-%% Load database and remove leading dollar signs.
+%% #Load database and remove leading dollar signs.
 % gsub('\\$', '', database$EXPENDITURES)
 % opts_chunk$set(fig.path='figure/latex-', cache.path='cache/latex-')
 %% end.rcode
