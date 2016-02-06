@@ -33,12 +33,8 @@ The \rinline{x} data under analysis includes\rinline{nrow(database)} distinct pa
 %% begin.rcode warning=FALSE, echo =FALSE, dev='my_pdf', fig.ext='pdf', fig.width = 8, fig.height = 8
 
 %cuts = cut(x = 1:3*length(sample_kas2[,5]), breaks = 3)
-% #plot3d(x,y,z,
-       xlab="Reading Ave", ylab="Math Ave",zlab="Writing lab",
-       col=rainbow(3)[cuts],
-       size = 2, type='s')
-% legend3d("topright", legend = paste(c("Reading","Math","Writting")), pch = 16, 
-         col = rainbow(3), cex=1, inset=c(0.02))
+% #plot3d(x,y,z,       xlab="Reading Ave", ylab="Math Ave",zlab="Writing lab",       col=rainbow(3)[cuts],       size = 2, type='s')
+% #legend3d("topright", legend = paste(c("Reading","Math","Writting")), pch = 16,          col = rainbow(3), cex=1, inset=c(0.02))
 % 
 %% end.rcode
 \end{document}
