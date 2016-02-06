@@ -9,6 +9,7 @@
 %% end.rcode
 \begin{document}
 
+
 %% a chunk with default options
 %% begin.rcode echo=FALSE
 % x <- "Average SAT Score"
