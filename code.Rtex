@@ -5,24 +5,26 @@
 %% begin.rcode setup, include=FALSE
 % library(knitr)
 %% Load database and remove leading dollar signs.
-% database <- read.csv("https://controllerdata.lacity.org/api/views/3ctd-sjrm/rows.csv?accessType=DOWNLOAD")
 % gsub('\\$', '', database$EXPENDITURES)
 % opts_chunk$set(fig.path='figure/latex-', cache.path='cache/latex-')
 %% end.rcode
 \begin{document}
 
-Boring stuff as usual:
-
 %% a chunk with default options
-%% begin.rcode
-% 1+1
-%
-% x=rnorm(5)
+%% begin.rcode echo=FALSEx
+% x <- "the City of Los Angeles"
+% options(scipen = 100)
+% database <- read.csv("https://controllerdata.lacity.org/api/views/3ctd-sjrm/rows.csv?accessType=DOWNLOAD")
+% database$EXPENDITURES <- as.numeric(gsub("\\$", "", as.characer(database$EXPENDITURES)))
+% departmentExpenditure <- aggregate(database$EXPENDITURE, by=list(Category=database$DEPARTMENT.NAME), FUN=sum)
+% npayments <- nrow(database)
+% avgpayment <- mean(database$EXPENDITURES)
+% earliestpaymentyear <- min(database$FISCAL_YEAR)
+% avgpayment <- mean(database$EXPENDITURES)
 %% end.rcode
 
-For the cached chunk below, you will need to wait for 10 seconds for
-the first time you compile this document, but it takes no time the
-next time you run it again.
+The data under review is comprised of itemized expenditures by month for various department-specific accounts of \rinline{x}. It features \rinline{npayments} individual payments dating to \rinline{earliestpaymentyear}. The mean payment was \rinline{avgpayment}. 
+
 
 %% chunk options: cache this chunk
 %% begin.rcode my-cache, cache=TRUE
@@ -42,16 +44,9 @@ of x becomes \rinline{x[1]}.
 How about figures? Let's use the Cairo PDF device (assumes R $\geq$
 2.14.0).
 
-%% begin.rcode cairo-scatter, dev='cairo_pdf', fig.width=5, fig.height=5, out.width='.8\\textwidth'
-% plot(cars) # a scatter plot
-%% end.rcode
-
-Warnings, messages and errors are preserved by default.
-
-%% begin.rcode
-% sqrt(-1) # here is a warning!
-% message('this is a message you should know')
-% 1+'a'  # impossible
+%% begin.rcode warning=FALSE, echo=FALSE, dev='my_pdf', fig.ext='pdf', fig.width = 8, fig.height = 8
+% boxplot(departmentExpenditure~DEPARTMENT, data=database, main="Cumulative Expenditures by Department", xlab="Department", ylab="Expenditures")
+% qplot(DEPARTMENT, departmentExpenditure, data=database, )
 %% end.rcode
 
 \end{document}
