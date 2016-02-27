@@ -8,7 +8,7 @@ if (len(sys.argv) == 1):
 filename = str(sys.argv[1])
 r_output = subprocess.check_output(["r", "Docker/knitscript.r", filename])
 try:
-     latex_output = subprocess.check_output(["pdflatex","-interaction","nonstopmode","*.tex"])
+     latex_output = subprocess.check_output(["pdflatex -interaction nonstopmode *.tex"], shell=True, stderr=subprocess.STDOUT)
 except Exception, e:
        latex_output = str(e.output)
 final_output = r_output + latex_output
