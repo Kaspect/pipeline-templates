@@ -5,3 +5,9 @@ RUN apt-get install -y --no-install-recommends r-base r-base-dev r-recommended l
 RUN apt-get install -y build-essential checkinstall
 RUN apt-get install -y libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
 RUN apt-get install -y python
+RUN apt-get install -y git
+
+RUN git clone https://github.com/Kaspect/pipeline-templates
+RUN cd pipeline-templates/Docker
+RUN git checkout iss11
+RUN r install.r knitr
