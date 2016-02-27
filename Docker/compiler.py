@@ -11,4 +11,4 @@ try:
      latex_output = subprocess.check_output(["pdflatex","-interaction","nonstopmode","*.tex"], shell=True, stderr=subprocess.STDOUT)
 except Exception, e:
        latex_output = str(e.output)
-f.write(r_Output + latex_output)
+f.write(r_output + latex_output)
