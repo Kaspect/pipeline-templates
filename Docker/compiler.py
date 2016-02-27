@@ -7,5 +7,8 @@ if (len(sys.argv) == 1):
 	print "usage: python compiler.py filename"
 filename = str(sys.argv[1])
 r_output = subprocess.check_output(["r", "Docker/knitscript.r", filename])
-latex_output = subprocess.check_output(["pdflatex", "*.tex"])
+try:
+     latex_output = subprocess.check_output(["pdflatex","-interaction","nonstopmode","*.tex"], shell=True, stderr=subprocess.STDOUT)
+except Exception, e:
+       latex_output = str(e.output)
 f.write(r_Output + latex_output)
