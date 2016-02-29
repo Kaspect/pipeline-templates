@@ -1,4 +1,5 @@
 from blang/latex
+WORKDIR /home
 RUN apt-get update -qq
 RUN apt-get dist-upgrade -y
 ENV R_BASE_VERSION 3.2.3
@@ -17,4 +18,4 @@ RUN apt-get install -y python
 RUN apt-get install -y git
 RUN apt-get install -y curl
 
-RUN git clone https://github.com/Kaspect/pipeline-templates.git && cd pipeline-templates && git checkout iss11 && r Docker/install.r knitr
+RUN git clone http://github.com/Kaspect/pipeline-templates.git && cd pipeline-templates && r Docker/install.r knitr
