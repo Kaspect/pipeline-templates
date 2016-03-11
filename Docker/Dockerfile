@@ -23,3 +23,5 @@ RUN git clone http://github.com/Kaspect/pipeline-templates.git && cd pipeline-te
 EXPOSE 80 5000
 
 CMD ["python", "pipeline-templates/Docker/api.py"]
+
+#proper usage: docker run -d -p 5000:5000 --name Compiler pipeline-templates
