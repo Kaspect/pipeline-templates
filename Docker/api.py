@@ -5,6 +5,10 @@ app = Flask(__name__)
 api = Api(app)
 
 class compiler(Resource):
+
+	def get (self) :
+		return "Hello!"
+
 	def put(self):
  	# Get Repo name and git clone
  		repo = request.form['data']
