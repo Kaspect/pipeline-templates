@@ -20,6 +20,6 @@ RUN pip install flask-restful
 
 RUN git clone http://github.com/Kaspect/pipeline-templates.git && cd pipeline-templates && git checkout iss15 && r Docker/install.r knitr
 
-EXPOSE 5000
+EXPOSE 80 5000
 
 CMD ["python", "pipeline-templates/Docker/api.py"]
