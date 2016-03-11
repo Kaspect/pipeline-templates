@@ -4,8 +4,11 @@ from flask_restful import Resource, Api
 app = Flask(__name__)
 api = Api(app)
 
-<<<<<<< HEAD
-class complier(Resource):
+class compiler(Resource):
+
+	def get(self) 
+		return{'hello':'world'}
+	
 
 	def put(self):
  	# Get Repo name and git clone
@@ -32,19 +35,7 @@ class complier(Resource):
  		return send_file(memory_file, attachment_filename=strRet, as_attachment=True) 
 
 api.add_resource(complier)
-=======
-todos = {}
 
-class TodoSimple(Resource):
-    def get(self, todo_id):
-        return {todo_id: todos[todo_id]}
-
-    def put(self, todo_id):
-        todos[todo_id] = request.form['data']
-        return {todo_id: todos[todo_id]}
-
-api.add_resource(TodoSimple, '/<string:todo_id>')
->>>>>>> 4ac71f21d7f829a4f0e3af598bafa2caf0133ed9
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
