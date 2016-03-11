@@ -47,4 +47,4 @@ api.add_resource(TodoSimple, '/<string:todo_id>')
 >>>>>>> 4ac71f21d7f829a4f0e3af598bafa2caf0133ed9
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port = 5000)
