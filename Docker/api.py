@@ -33,7 +33,7 @@ class compiler(Resource):
  		strRet = urlArr(-1) + ".zip"
  		return send_file(memory_file, attachment_filename=strRet, as_attachment=True) 
 
-api.add_resource(compiler)
+api.add_resource(compiler,"/")
 
 
 if __name__ == '__main__':
