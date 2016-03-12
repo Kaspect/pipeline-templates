@@ -18,7 +18,7 @@ class compiler(Resource):
 			pipe.wait()
 
 			# Get file location and call complie to create PDF and log
-			urlArr = repo.split(/)
+			urlArr = repo.split("/")
 			relevantBit = urlArr[-1]
 			compiler.py(relevantBit+"\Root.Rtex")) 
 
@@ -31,7 +31,7 @@ class compiler(Resource):
 
 
 			# Return Zip
-			strRet = urlArr(-1) + ".zip"
+			strRet = urlArr[-1] + ".zip"
 			return send_file(memory_file, attachment_filename=strRet, as_attachment=True) 
 
 		except:
