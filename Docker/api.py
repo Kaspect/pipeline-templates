@@ -31,7 +31,7 @@ class compiler(Resource):
 			# Get file location and call complie to create PDF and log
 			urlArr = repo.split("/")
 			relevantBit = urlArr[-1]
-			filename = relevantBit+"\Root.Rtex"
+			filename = relevantBit+"/Root.Rtex"
 			print("Got address of Rtex in repo")
 
 
