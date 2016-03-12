@@ -20,11 +20,11 @@ class compiler(Resource):
 			# Get file location and call complie to create PDF and log
 			urlArr = repo.split("/")
 			relevantBit = urlArr[-1]
-			compiler.py(relevantBit+"\Root.Rtex")) 
+			compiler.py(relevantBit+"\Root.Rtex") 
 
 			# Put files in a zip
 			memory_file = BytesID()
-			with zipfile.ZipFile(memory_file, 'w' as zf:
+			with zipfile.ZipFile(memory_file, 'w') as zf:
 				zf.write('Root.pdf')
 				zf.write('log.txt')
 			memory_file.seek(0)
