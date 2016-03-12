@@ -4,7 +4,7 @@
 2.  Move to pipeline-templates/Docker
 3.  Build the dockerfile with docker build -t pipeline-templates .  (The period is important!)
 4.  Run the docker image with docker run -d -p 5000:5000 --name Compiler pipeline-templates
-6.  To compile a .Rtex to a pdf, curl $(docker-machine ip default):5000/ -d "data=https://github.com/kaspect/pipeline-templates" -X PUT
+6.  To compile a .Rtex to a pdf, curl $(docker-machine ip default):5000/ -d "data=https://github.com/Kaspect/DockerPipeline-SampleRepo" -X PUT
 
 #Deliverable 1, for Li, Reminder, Schwarzer
 0. Read the following carefully: http://kbroman.org/knitr_knutshell/pages/latex.html
