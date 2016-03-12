@@ -4,8 +4,8 @@
 2.  Move to pipeline-templates/Docker
 3.  Build the dockerfile with `docker build -t pipeline-templates .`  (The period is important!)
 4.  Run the docker image with docker run -i -t pipeline-templates
-5.  Get a copy of pipeline-templates inside docker by running on the command line in Docker: git clone https://github.com/Kaspect/pipeline-templates.git && cd pipeline-templates && git checkout iss11 && cd ..
-6.  To compile a .Rtex to a pdf, run python pipeline-templates/Docker/compiler.py <filename>
+5.  To compile a .Rtex to a pdf, run python pipeline-templates/Docker/compiler.py <filename> (the repo pipeline-templates is automatically downloaded during setup)
+6.  To get a copy of a repo inside docker, run git clone https://github.com/OrganizationName/RepoName.git on the Docker command line when inside the instance.
 
 #Deliverable 1, for Li, Reminder, Schwarzer
 0. Read the following carefully: http://kbroman.org/knitr_knutshell/pages/latex.html
