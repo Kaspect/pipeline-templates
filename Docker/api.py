@@ -36,7 +36,7 @@ class compiler(Resource):
 
 		except:
 			e = sys.exc_info()[0]
-			write_to_page( "<p>Error: %s</p>" % e )
+			return write_to_page( "<p>Error: %s</p>" % e )
 			
 api.add_resource(compiler,"/")
 
