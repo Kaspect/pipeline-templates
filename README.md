@@ -2,10 +2,9 @@
 #To use the docker instance:
 1.  Run the Docker Quickstart console
 2.  Move to pipeline-templates/Docker
-3.  Build the dockerfile with `docker build -t pipeline-templates .`  (The period is important!)
-4.  Run the docker image with docker run -i -t pipeline-templates
-5.  To compile a .Rtex to a pdf, run python pipeline-templates/Docker/compiler.py <filename> (the repo pipeline-templates is automatically downloaded during setup)
-6.  To get a copy of a repo inside docker, run git clone https://github.com/OrganizationName/RepoName.git on the Docker command line when inside the instance.
+3.  Build the dockerfile with docker build -t pipeline-templates .  (The period is important!)
+4.  Run the docker image with docker run -d -p 5000:5000 --name Compiler pipeline-templates
+6.  To compile a .Rtex to a pdf, curl $(docker-machine ip default):5000/ -d "data=https://github.com/Kaspect/DockerPipeline-SampleRepo" -X PUT
 
 #Deliverable 1, for Li, Reminder, Schwarzer
 0. Read the following carefully: http://kbroman.org/knitr_knutshell/pages/latex.html
@@ -45,10 +44,5 @@ https://controllerdata.lacity.org/api/views/3ctd-sjrm/rows.csv?accessType=DOWNLO
 - Design a hierarchical clustering approach to this dataset to look at the types of departments that are most similar
 - https://stat.ethz.ch/R-manual/R-devel/library/stats/html/hclust.html
 
-
-
-
-
-=====================================
 
 As with everything, Google it & collaborate with each other!
