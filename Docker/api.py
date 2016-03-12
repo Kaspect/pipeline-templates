@@ -70,8 +70,8 @@ class compiler(Resource):
 			return send_file(memory_file, attachment_filename=strRet, as_attachment=True) 
 
 		except Exception, e:
-			e = sys.exc_info()[0]
-			print(write_to_page( "<p>Error: %s</p>" % e ))
+			print(str(e.output))
+			return (str(e.output))
 			
 api.add_resource(compiler,"/")
 
