@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask_restful import Resource, Api			
 import sys
 import subprocess
+import logging
 
 
 app = Flask(__name__)
@@ -15,24 +16,24 @@ class compiler(Resource):
 		return "Hello!"
 
 	def put(self):
-		print("Started put command")
+		logging.warning("Started put command")
 		try:
 			# Get Repo name and git clone
 			repo = request.form['data']
-			print("Got repo address from data")
+			logging.warning("Got repo address from data")
 			cmd = 'git clone ' + repo
 			pipe = subprocess.Popen(cmd, shell=True)
 			
-			print("Started clone command")
+			logging.warning("Started clone command")
 			pipe.wait()
 			
-			print("Finished clone command")
+			logging.warning("Finished clone command")
 
 			# Get file location and call complie to create PDF and log
 			urlArr = repo.split("/")
 			relevantBit = urlArr[-1]
 			filename = relevantBit+"/Root.Rtex"
-			print("Got address of Rtex in repo")
+			logging.warning("Got address of Rtex in repo")
 
 
 			#create output file
@@ -61,7 +62,7 @@ class compiler(Resource):
 			with zipfile.ZipFile(memory_file, 'w') as zf:
 				zf.write('Root.pdf')
 				zf.write('log.txt')
-				print("Wrote ")
+				logging.warning("Wrote to zip")
 			memory_file.seek(0)
 
 
@@ -70,7 +71,7 @@ class compiler(Resource):
 			return send_file(memory_file, attachment_filename=strRet, as_attachment=True) 
 
 		except Exception, e:
-			print(str(e.output))
+			logging.warning(str(e.output))
 			return (str(e.output))
 			
 api.add_resource(compiler,"/")
