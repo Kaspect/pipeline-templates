@@ -3,6 +3,7 @@ from flask_restful import Resource, Api
 import sys
 import subprocess
 import logging
+import io
 
 
 app = Flask(__name__)
@@ -58,7 +59,7 @@ class compiler(Resource):
 
 			#compiler.py(relevantBit+"\Root.Rtex") 
 			# Put files in a zip
-			memory_file = BytesID()
+			memory_file = io.BytesIO()
 			with zipfile.ZipFile(memory_file, 'w') as zf:
 				zf.write('Root.pdf')
 				zf.write('log.txt')

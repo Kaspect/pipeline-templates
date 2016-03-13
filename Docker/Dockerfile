@@ -21,7 +21,7 @@ RUN pip install flask-restful
 
 RUN git clone http://github.com/Kaspect/pipeline-templates.git && cd pipeline-templates && git checkout iss15 && r Docker/install.r knitr
 
-ENV testnum 13
+ENV testnum 14
 RUN cd pipeline-templates && git pull origin iss15
 
 EXPOSE 80 5000
