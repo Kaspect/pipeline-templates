@@ -42,15 +42,15 @@ class compiler(Resource):
 			#Compile the file in knitr and save the output, including if there's an error.
 			try:
 				r_output = subprocess.check_output(["r", "pipeline-templates/Docker/knitscript.r", filename])
-			except Exception, e:
-				r_output = str(e.output)
+			except Exception as e:
+				r_output = str(e)
 
 			#Compile the latex, but save the output if there's an error
 			try:
 				latex_output = subprocess.check_output(["pdflatex -interaction nonstopmode *.tex"], shell=True, stderr=subprocess.STDOUT)
 				
-			except Exception, e:
-				latex_output = str(e.output)
+			except Exception as e:
+				latex_output = str(e)
 				#Combine the outputs and write them to log.txt
 				
 			final_output = r_output + latex_output
@@ -70,9 +70,9 @@ class compiler(Resource):
 			strRet = urlArr[-1] + ".zip"
 			return send_file(memory_file, attachment_filename=strRet, as_attachment=True) 
 
-		except Exception, e:
-			logging.warning(str(e.output))
-			return (str(e.output))
+		except Exception as e:
+			logging.warning(str(e))
+			return (str(e))
 			
 api.add_resource(compiler,"/")
 
