@@ -58,7 +58,7 @@ class compiler(Resource):
 
 			#compiler.py(relevantBit+"\Root.Rtex") 
 			# Put files in a zip
-			memory_file = BytesIO()
+			memory_file = BytesID()
 			with zipfile.ZipFile(memory_file, 'w') as zf:
 				zf.write('Root.pdf')
 				zf.write('log.txt')
