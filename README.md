@@ -45,9 +45,4 @@ https://controllerdata.lacity.org/api/views/3ctd-sjrm/rows.csv?accessType=DOWNLO
 - https://stat.ethz.ch/R-manual/R-devel/library/stats/html/hclust.html
 
 
-
-
-
-=====================================
-
 As with everything, Google it & collaborate with each other!
