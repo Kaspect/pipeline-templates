@@ -6,6 +6,7 @@ ENV R_BASE_VERSION 3.2.3
 RUN echo deb "http://cran.cnr.berkeley.edu/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
 RUN apt-get update && apt-get install -y --no-install-recommends \
+
 		littler \
         r-cran-littler \
 		r-base=${R_BASE_VERSION}* \
@@ -18,14 +19,10 @@ RUN apt-get install -y python python-pip
 RUN apt-get install -y git curl
 RUN pip install flask-restful
 
-
-RUN git clone http://github.com/Kaspect/pipeline-templates.git && cd pipeline-templates && git checkout iss15 && r Docker/install.r knitr
-
-ENV testnum 14
-RUN cd pipeline-templates && git pull origin iss15
+RUN git clone http://github.com/Kaspect/pipeline-compiler-backend-api.git && cd pipeline-compiler-backend-api && r Docker/install.r knitr
 
 EXPOSE 80 5000
 
-CMD ["python", "pipeline-templates/Docker/api.py"]
+CMD ["python", "pipeline-compiler-backend-api/api.py"]
 
-#proper usage: docker run -d -p 5000:5000 --name Compiler pipeline-templates
+#proper usage: docker run -d -p 5000:5000 --name Compiler Pipeline-Compiler
