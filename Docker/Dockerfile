@@ -19,7 +19,7 @@ RUN apt-get install -y python python-pip
 RUN apt-get install -y git curl
 RUN pip install flask-restful
 
-RUN git clone http://github.com/Kaspect/pipeline-compiler-backend-api.git && cd pipeline-compiler-backend-api && r Docker/install.r knitr
+RUN git clone http://github.com/Kaspect/pipeline-compiler-backend-api.git && cd pipeline-compiler-backend-api && r install.r knitr
 
 EXPOSE 80 5000
 
